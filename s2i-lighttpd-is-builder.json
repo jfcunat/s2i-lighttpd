@@ -1,0 +1,30 @@
+{
+  "kind": "ImageStream",
+  "apiVersion": "v1",
+  "metadata": {
+  "name": "lighttpd",
+  "annotations": {
+    "openshift.io/display-name": "Lighttpd"
+    }
+  },
+  "spec": {
+    "dockerImageRepository": "docker.io/marcdespland/s2i-lighttpd",
+    "tags": [
+       {
+        "name": "latest",
+        "from": {
+          "kind": "DockerImage",
+          "name": "docker.io/marcdespland/s2i-lighttpd"
+        },
+        "annotations": {
+          "openshift.io/display-name": "Lighttpd static website ",
+          "description": "Expose a static website using lighttpd",
+          "iconClass": "icon-git",
+          "tags": "builder,lighttpd",
+          "supports":"lighttpd",
+          "version": "1.4.35"
+        }
+      }
+    ]
+  }
+}
